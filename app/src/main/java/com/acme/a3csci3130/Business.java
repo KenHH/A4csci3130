@@ -16,17 +16,19 @@ import com.google.firebase.database.IgnoreExtraProperties;
 
         public class Business implements Serializable {
 
+            public String uid;
             public String businessNumber;
             public String name;
             public String businessPrimary;
             public String address;
             public String provinceTerritory;
 
-            public Business(String personID, String name, String email) {
+            public Business() {
                     }
 
-            public Business(String businessNumber, String name, String businessPrimary, String address, String provinceTerritory) {
+            public Business(String uid, String businessNumber, String name, String businessPrimary, String address, String provinceTerritory) {
 
+                this.uid = uid;
                 this.businessNumber = businessNumber;
                 this.name = name;
                 this.businessPrimary = businessPrimary;
@@ -39,7 +41,7 @@ import com.google.firebase.database.IgnoreExtraProperties;
     public Map<String, Object> toMap() {
 
                 HashMap<String, Object> result = new HashMap<>();
-
+                result.put("uid", uid);
                 result.put("businessNumber", businessNumber);
                 result.put("name", name);
                 result.put("primaryBusiness", businessPrimary);

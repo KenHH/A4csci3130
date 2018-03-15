@@ -62,11 +62,11 @@ public class CreateBusinessActivity extends Activity {
         String businessPrimary = typeSpinner.getSelectedItem().toString();
         String address = addressField.getText().toString();
         String provinceTerritory = provSpinner.getSelectedItem().toString();
-        Business business = new Business(businessNum, name, businessPrimary, address, provinceTerritory);
+        Business business = new Business(uid, businessNum, name, businessPrimary, address, provinceTerritory);
 
         Task task = appState.firebaseReference.child(uid).setValue(business);
         task.addOnCompleteListener(new OnCompleteListener() {
-            @Override
+
             public void onComplete(@NonNull Task task) {
                 if (!task.isSuccessful()) {
                     Log.i("CREATE_BUSINESS", task.getException().toString());
@@ -80,6 +80,7 @@ public class CreateBusinessActivity extends Activity {
                 else
                     finish();
             }
+
         });
-    }
+ }
 }
