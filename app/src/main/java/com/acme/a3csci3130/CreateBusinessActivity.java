@@ -42,14 +42,12 @@ public class CreateBusinessActivity extends Activity {
         addressField = (EditText) findViewById(R.id.address);
 
         typeSpinner = (Spinner) findViewById(R.id.type_spin);
-        ArrayAdapter<CharSequence> typeAdapter = ArrayAdapter.createFromResource(this,
-                R.array.bus_type_array, android.R.layout.simple_spinner_item);
+        ArrayAdapter<CharSequence> typeAdapter = ArrayAdapter.createFromResource(this, R.array.bus_type_array, android.R.layout.simple_spinner_item);
         typeAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         typeSpinner.setAdapter(typeAdapter);
 
         provSpinner = (Spinner) findViewById(R.id.prov_spin);
-        ArrayAdapter<CharSequence> provAdapter = ArrayAdapter.createFromResource(this,
-                R.array.business_prov_array, android.R.layout.simple_spinner_item);
+        ArrayAdapter<CharSequence> provAdapter = ArrayAdapter.createFromResource(this, R.array.business_prov_array, android.R.layout.simple_spinner_item);
         provAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         provSpinner.setAdapter(provAdapter);
     }

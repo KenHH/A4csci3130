@@ -7,57 +7,115 @@
     tools:context="com.acme.a3csci3130.DetailViewActivity">
 
     <EditText
-        android:id="@+id/name"
-        android:layout_width="360dp"
+        android:id="@+id/number"
+        android:layout_width="350dp"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="10dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginTop="8dp"
-        android:hint="Name"
-        app:layout_constraintBottom_toTopOf="@+id/number"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="15dp"
+        android:hint="@string/business_num"
+        android:inputType="number"
         app:layout_constraintLeft_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/number"
-        android:layout_width="360dp"
+        android:id="@+id/name"
+        android:layout_width="350dp"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="10dp"
-        android:hint="Business Number"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="15dp"
+        android:hint="@string/business_name"
+        android:maxLength="48"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/number" />
+
+    <TextView
+        android:id="@+id/type"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="18dp"
+        android:layout_marginTop="15dp"
+        android:hint="@string/business_type"
+        android:maxLength="48"
+        android:textSize="18sp"
+        app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/name" />
+
+    <Spinner
+        android:id="@+id/type_spin"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="180dp"
+        android:layout_marginTop="15dp"
+        android:hint="@string/business_type"
+        android:maxLength="40"
+        android:textSize="16sp"
+        app:layout_constraintLeft_toLeftOf="@id/type"
+        app:layout_constraintTop_toBottomOf="@+id/name" />
+
+    <EditText
+        android:id="@+id/address"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="15dp"
+        android:hint="@string/business_address"
+        android:maxLength="49"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/type" />
+
+    <TextView
+        android:id="@+id/prov"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="18dp"
+        android:layout_marginTop="15dp"
+        android:hint="@string/business_prov"
+        android:maxLength="48"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/address" />
+
+    <Spinner
+        android:id="@+id/prov_spin"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="180dp"
+        android:layout_marginTop="15dp"
+        android:hint="@string/business_type"
+        android:maxLength="40"
+        android:textSize="16sp"
+        app:layout_constraintLeft_toLeftOf="@id/prov"
+        app:layout_constraintTop_toBottomOf="@+id/address" />
 
     <Button
         android:id="@+id/updateButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="340dp"
-        android:layout_marginEnd="4dp"
-        android:layout_marginLeft="52dp"
-        android:layout_marginTop="22dp"
+        android:layout_marginBottom="168dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginStart="55dp"
+        android:layout_marginTop="34dp"
         android:onClick="updateContact"
         android:text="Update Data"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/deleteButton"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/number"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/prov" />
 
     <Button
         android:id="@+id/deleteButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginRight="40dp"
-        android:layout_marginTop="128dp"
+        android:layout_marginBottom="168dp"
+        android:layout_marginEnd="51dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="34dp"
         android:onClick="eraseContact"
         android:text="Erase Contact"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/updateButton"
+        app:layout_constraintTop_toBottomOf="@+id/prov" />
 
 
 
