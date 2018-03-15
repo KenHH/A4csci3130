@@ -25,7 +25,15 @@ import com.google.firebase.database.IgnoreExtraProperties;
 
             public Business() {
                     }
-
+    /**
+     * Instantiate a Business method
+     * @param uid ID of this business
+     * @param businessNumber A 9 digit number for the business
+     * @param name The name of the business
+     * @param businessPrimary The primary job
+     * @param address The address of the business
+     * @param provinceTerritory The province/territory of the business
+     */
             public Business(String uid, String businessNumber, String name, String businessPrimary, String address, String provinceTerritory) {
 
                 this.uid = uid;

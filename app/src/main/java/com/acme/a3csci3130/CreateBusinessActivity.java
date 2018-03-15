@@ -51,7 +51,10 @@ public class CreateBusinessActivity extends Activity {
         provAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         provSpinner.setAdapter(provAdapter);
     }
-
+    /**
+     * When the Create Business button is pressed, this method is idealized
+     * It will then update the firebase with the user information
+     */
     public void submitInfoButton(View v) {
         //each entry needs a unique ID
         String uid = appState.firebaseReference.push().getKey();

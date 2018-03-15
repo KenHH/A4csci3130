@@ -12,6 +12,10 @@ import android.widget.Spinner;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
+/**
+ * This class displays information stored in the firebase about a business
+ * Business can be updated or deleted.
+ */
 public class DetailViewActivity extends Activity {
 
     private EditText nameField, busField,adrField;
@@ -44,7 +48,7 @@ public class DetailViewActivity extends Activity {
 
         database=FirebaseDatabase.getInstance();
         userRef=database.getReference();
-        
+
         if(receivedPersonInfo != null){
             nameField.setText(receivedPersonInfo.name);
             busField.setText(receivedPersonInfo.businessNumber);
@@ -72,6 +76,7 @@ public class DetailViewActivity extends Activity {
     public void eraseContact(View v)
     {
         //TODO: Erase contact functionality
+        
         String uid=receivedPersonInfo.uid;
         userRef.child("business").child(uid).removeValue();
         Intent intent = new Intent(this, MainActivity.class);
