@@ -16,7 +16,7 @@ import com.google.firebase.database.IgnoreExtraProperties;
 
         public class Business implements Serializable {
 
-            public int businessNumber;
+            public String businessNumber;
             public String name;
             public String businessPrimary;
             public String address;
@@ -25,7 +25,7 @@ import com.google.firebase.database.IgnoreExtraProperties;
             public Business(String personID, String name, String email) {
                     }
 
-            public Business(int businessNumber, String name, String businessPrimary, String address, String provinceTerritory) {
+            public Business(String businessNumber, String name, String businessPrimary, String address, String provinceTerritory) {
 
                 this.businessNumber = businessNumber;
                 this.name = name;
@@ -42,7 +42,7 @@ import com.google.firebase.database.IgnoreExtraProperties;
 
                 result.put("businessNumber", businessNumber);
                 result.put("name", name);
-                result.put("businessType", businessPrimary);
+                result.put("primaryBusiness", businessPrimary);
                 result.put("address", address);
                 result.put("provinceTerritory", provinceTerritory);
 
